@@ -9,7 +9,7 @@ RUN rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.
 # https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols#_dumb_http
 RUN mkdir /srv/git \
     && cd /srv/git \
-    && git clone --bare https://github.com/concaf/golang-docker-build-tutorial golang-docker-build-tutorial.git \
+    && git clone --bare https://github.com/jhutar/golang-docker-build-tutorial golang-docker-build-tutorial.git \
     && cd golang-docker-build-tutorial.git/ \
     && git update-server-info \
     && mv hooks/post-update.sample hooks/post-update \
