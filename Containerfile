@@ -14,7 +14,7 @@ RUN mkdir /srv/git \
     && git update-server-info \
     && mv hooks/post-update.sample hooks/post-update \
     && chown -R 1001:0 ./ \
-    && chmod o+x hooks/post-update
+    && chmod ug+x hooks/post-update
 
 # Nginx welcome page
 RUN mkdir /srv/nginx \
@@ -23,7 +23,7 @@ RUN mkdir /srv/nginx \
 # Prepare dir for socket
 RUN mkdir -p /srv/supervisord/run \
     && chown -R 1001:0 /srv/supervisord/run \
-    && chmod -R o+rwx /srv/supervisord/run
+    && chmod -R og+rwx /srv/supervisord/run
 
 # Prepare nginx logging
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
